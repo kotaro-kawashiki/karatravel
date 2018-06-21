@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Item;
+
 class ItemsController extends Controller
 {
     /**
@@ -16,11 +18,11 @@ class ItemsController extends Controller
         $data = [];
         if (\Auth::check()) {
             $user = \Auth::user();
-            $spendings = $user->spendings()->orderBy('created_at', 'desc')->paginate(10);
+            $items = $user->items()->orderBy('created_at', 'desc')->paginate(10);
 
             $data = [
                 'user' => $user,
-                'spendings' => $spendings,
+                'items' => $items,
             ];
             $data += $this->counts($user);
             return view('users.show', $data);
@@ -37,7 +39,11 @@ class ItemsController extends Controller
      */
     public function create()
     {
-        return view('items.create'
+        
+        $item = new Item;
+        
+        return view('items.create', [
+            'item' => $item,]
         );
     }
 
