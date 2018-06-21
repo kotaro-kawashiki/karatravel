@@ -1,4 +1,4 @@
-    <nav class="navbar navbar-light bg-primary navbar-static-top" style="margin-bottom:0px;">
+    <nav class="navbar navbar-static-top" style="margin-bottom:0px;">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -10,7 +10,7 @@
                 
                 
                 <div style="margin-bottom:13;"></div>
-                <b><a class="navbar-brand text-muted" href="/" style="color:black; font-size:200%;transform: translate(0px) rotate(10deg); margin-top:13px;">Taroposts</a></b>
+                <b><a class="navbar-brand text-muted" href="/" style="color:black; font-size:200%; margin-top:13px;">Taroposts</a></b>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right pager">
@@ -26,9 +26,7 @@
                                 <li>{!! link_to_route('logout', 'Logout',['class' => 'btn btn-warning']) !!}</li>
                             </ul>
                         </li>
-                    @else
-                        <li>{!! link_to_route('register', 'Signup') !!}</li>
-                        <li>{!! link_to_route('login', 'Login') !!}</li>
+                    
                     @endif
                     
                 </ul>

@@ -12,6 +12,8 @@
           <div class="intro-lead-in">Welcome To Our Studio!</div>
           <div class="intro-heading text-uppercase">It's Nice To Meet You</div>
           {!! link_to_route('register','Register',null,['class' => 'btn btn-primary']) !!}
+          {!! link_to_route('login','Login',null,['class' => 'btn btn-success']) !!}
+          
         </div>
       </div>
     </header>
