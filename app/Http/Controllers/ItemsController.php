@@ -37,7 +37,8 @@ class ItemsController extends Controller
      */
     public function create()
     {
-        //
+        return view('items.create'
+        );
     }
 
     /**
