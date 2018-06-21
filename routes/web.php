@@ -18,4 +18,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::resource('items', 'ItemsController');
+Route::group(['middleware' => 'auth'], function () {
+    Route::resource('users', 'UsersController');
+    Route::resource('items', 'ItemsController');
+});

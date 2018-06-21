@@ -13,9 +13,21 @@ class ItemsController extends Controller
      */
     public function index()
     {
-        $items = Item::all();
+        $data = [];
+        if (\Auth::check()) {
+            $user = \Auth::user();
+            $spendings = $user->spendings()->orderBy('created_at', 'desc')->paginate(10);
+
+            $data = [
+                'user' => $user,
+                'spendings' => $spendings,
+            ];
+            $data += $this->counts($user);
+            return view('users.show', $data);
+        }else {
+            return view('welcome');
+        }
         
-        return view('welcome',['items' => $items,]);
     }
 
     /**
