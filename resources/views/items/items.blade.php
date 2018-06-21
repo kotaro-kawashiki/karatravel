@@ -35,7 +35,9 @@
         ]);
         var options = { //オプションの指定
             pieSliceText: 'label',
-            title: 'Test Chart'
+            title: 'お札は頭を下にしていれる派です。',
+            'width': 800,
+			'height': 600
         };
         var chart = new google.visualization.PieChart(document.getElementById('piechart')); 
         //グラフを表示させる要素の指定
