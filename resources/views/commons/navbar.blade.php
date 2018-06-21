@@ -11,7 +11,7 @@
                 
                 
                 <div style="margin-bottom:13;"></div>
-                <b><a class="navbar-brand text-muted" href="/" style="color:black; font-size:200%;transform: translate(0px) rotate(10deg); margin-top:13px;">Taroposts</a></b>
+                <b><a class="navbar-brand text-muted" href="/" style="color:black; font-size:200%;transform: translate(0px) ; margin-top:13px;">Household Accounts</a></b>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right pager">
