@@ -1,5 +1,4 @@
-<header>
-    <nav class="navbar navbar-light bg-primary navbar-static-top">
+    <nav class="navbar navbar-light bg-primary navbar-static-top" style="margin-bottom:0px;">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -24,7 +23,7 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li class="dropdown-header">menus</li>
-                                
+                                <li>{!! link_to_route('logout', 'Logout',['class' => 'btn btn-warning']) !!}</li>
                             </ul>
                         </li>
                     @else
@@ -36,4 +35,3 @@
             </div>
         </div>
     </nav>
-</header>

@@ -3,13 +3,19 @@
 @section('content')
 
     @if (Auth::check())
-       weikome
        @include('items.items')
     @else
-        
-        {!! link_to_route('register', 'Sign up', null, ['class' => 'btn btn-lg btn-primary']) !!}
-        {!! link_to_route('login', 'Login', null, ['class' => 'btn btn-lg btn-success']) !!}
-
-    @endif
+    <!-- Header -->
+    <header class="masthead">
+      <div class="container">
+        <div class="intro-text">
+          <div class="intro-lead-in">Welcome To Our Studio!</div>
+          <div class="intro-heading text-uppercase">It's Nice To Meet You</div>
+          {!! link_to_route('register','Register',null,['class' => 'btn btn-primary']) !!}
+        </div>
+      </div>
+    </header>
+    @endif  
+     
 @endsection
 
