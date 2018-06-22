@@ -3,20 +3,31 @@
 
 
 @section('content')
-<div style="background-color:#EDFEFF;" >
+<div class="createblade"style="background-color:#EDFEFF;" >
         
         <div style="padding-top:5%;">
-        <center><h2>👑🌷新規出費を入力🌷👑</h2></center>
+        <center><h1>Input New Spending</h1></center>
         </div>
         
-        <div class="form" style="background-color:#FFFCEA; margin:5% 30% 10% 30%">
+        <div class="form" style="background-color:C4E7FF; margin:5% 30% 10% 30%; ">
         
         {!! Form::open(['route' => 'items.store']) !!}
+        <br>
+        <br>
         
         <center>
         <div class="form-group padding-top:5%;">
         <div class="col-3">
-        genre{!! Form::select('genre',['class' =>'あ','い','う']) !!}<br>
+        <h4>Genre</h4>
+        {!! Form::select('genre',['class' =>'A','B','C']) !!}
+        </div>
+        </div>
+        </center>
+        
+        <center>
+        <div class="form -group">
+        <div class="col-4">
+        <h4>Price</h4>{!! Form::text('kinngaku',null, ['class' => 'form-control form-control-lg mb-3']) !!}<br>
         </div>
         </div>
         </center>
@@ -24,15 +35,7 @@
         <center>
         <div class="form-group">
         <div class="col-4">
-        Price{!! Form::text('kinngaku',null, ['class' => 'form-control form-control-lg mb-3']) !!}<br>
-        </div>
-        </div>
-        </center>
-        
-        <center>
-        <div class="form-group">
-        <div class="col-4">
-        Syousai{!! Form::text('namae',null, ['class' => 'form-control form-control-lg mb-3']) !!}<br>
+        <h4>Syousai</h4>{!! Form::text('namae',null, ['class' => 'form-control form-control-lg mb-3']) !!}<br>
         </div>
         </div>
         </center>
@@ -42,8 +45,8 @@
         </center>
         
         {!! Form::close() !!}
+        <br>
         </div>
-
 
 
 <div>
