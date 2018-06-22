@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-                <center>
+                <center style="margin-top:100px;" class="jumbotron">
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
                         <!--email-->
@@ -12,7 +12,7 @@
                                 <div class="input-group-prepend">
                                   <div class="input-group-text">@</div>
                                 </div>
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="User Name" required autofocus>
                                 @if ($errors->has('email'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>
@@ -28,7 +28,7 @@
                                 <div class="input-group-prepend">
                                   <div class="input-group-text"><span class="oi oi-key" title="key" aria-hidden="true"></span></div>
                                 </div>
-                                <input id="password" type="password" class="form-control" name="password" required>
+                                <input id="password" type="password" class="form-control" name="password" placeholder="Password" required >
 
                                 @if ($errors->has('password'))
                                     <span class="help-block">
