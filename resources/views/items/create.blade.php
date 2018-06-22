@@ -17,7 +17,7 @@
         
         ジャンル{!! Form::select('genre',['あ','い','う']) !!}<br>
         
-        詳細{!! Form::text('namae') !!}<br>
+        しょうさい{!! Form::text('namae') !!}<br>
         
         金額{!! Form::text('kinngaku') !!}円<br>
         
