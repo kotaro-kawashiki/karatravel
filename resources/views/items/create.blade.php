@@ -1,18 +1,30 @@
+<head>
+        <style>
+                .navbar
+                {
+                        background-color: #B2F3FF;
+                }
+        </style>
+</head>
+<body>
 @extends('layouts.app')
+
 
 @section('content')
 
-@if (Auth::user()->id == $user->id)
+        
         {!! Form::open(['route' => 'items.store']) !!}
-        <div class="form-group">
-        {!! Form::text('genre', ['class' => 'form-control']) !!}
-        {!! Form::text('namae', ['class' => 'form-control']) !!}
-        {!! Form::text('kinngaku', ['class' => 'form-control']) !!}
-            
-        {!! Form::submit('Post', ['class' => 'btn btn-primary btn-block']) !!}
-        </div>
+        
+        ジャンル{!! Form::select('genre',['あ','い','う']) !!}<br>
+        
+        しょうさい{!! Form::text('namae') !!}<br>
+        
+        金額{!! Form::text('kinngaku') !!}円<br>
+        
+        {!! Form::submit('Post') !!}
+
         {!! Form::close() !!}
-@endif
+
 
 
 <a href="/" >戻る</a>
@@ -20,3 +32,4 @@
 
 
 @endsection
+</body>
