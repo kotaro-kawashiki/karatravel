@@ -1,20 +1,20 @@
 <div class="container">
     
-    <div class="col-lg-12"style="margin-bottom:50px;"></div>
+    <div class="col-xl-12"style="margin-bottom:50px;"></div>
     
-    <div class="row">
-        <div class="col-lg-7">
-            <div id="piechart"　class="col-lg-7"></div>
+    <div class="row" style="width:1300px; padding-left:10px;">
+        <div class="col-xl-7">
+            <div id="piechart"　class="col-xl-7"></div>
         </div>
-        <div class="col-lg-5" style="background-color:pink; height:550px;">
+        <div class="col-xl-5" style="background-color:pink; height:550px;">
         lists
         </div>
     </div>
-    <div class="row">
-        <div class="col-lg-9" style="background-color:purple; height:100px;">
+    <div class="row" style="width:1300px;">
+        <div class="col-xl-9" style="background-color:purple; height:100px;">
             total amount of this month
         </div>
-        <div class="col-lg-3" style="background-color:red; height:100px;">
+        <div class="col-xl-3" style="background-color:red; height:100px;">
             shinnki-nyuuryoku
         </div>
     </div>
