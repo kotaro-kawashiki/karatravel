@@ -1,35 +1,56 @@
-<head>
-        <style>
-                .navbar
-                {
-                        background-color: #B2F3FF;
-                }
-        </style>
-</head>
-<body>
+
 @extends('layouts.app')
 
 
 @section('content')
-
+<div style="background-color:#EDFEFF;" >
+        
+        <div style="padding-top:5%;">
+        <center><h2>新規出費を入力</h2></center>
+        </div>
+        
+        <div class="form" style="background-color:pink; margin:5% 30% 10% 30%">
         
         {!! Form::open(['route' => 'items.store']) !!}
         
-        ジャンル{!! Form::select('genre',['あ','い','う']) !!}<br>
+        <center>
+        <div class="form-group padding-top:5%;">
+        <div class="col-3">
+        genre{!! Form::select('genre',['class' =>'あ','い','う']) !!}<br>
+        </div>
+        </div>
+        </center>
         
-        しょうさい{!! Form::text('namae') !!}<br>
+        <center>
+        <div class="form-group">
+        <div class="col-4">
+        Price{!! Form::text('kinngaku',null, ['class' => 'form-control form-control-lg mb-3']) !!}<br>
+        </div>
+        </div>
+        </center>
         
-        金額{!! Form::text('kinngaku') !!}円<br>
+        <center>
+        <div class="form-group">
+        <div class="col-4">
+        Syousai{!! Form::text('namae',null, ['class' => 'form-control form-control-lg mb-3']) !!}<br>
+        </div>
+        </div>
+        </center>
         
-        {!! Form::submit('Post') !!}
-
+        <center>
+        {!! Form::submit('Post',['class' => "btn btn-info"]) !!}
+        </center>
+        
         {!! Form::close() !!}
+        </div>
 
 
 
-<a href="/" >戻る</a>
+<div>
+<center><a href="/" >戻る</a></center>        
+</div>
 
 
 
 @endsection
-</body>
+</div>

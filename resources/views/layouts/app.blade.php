@@ -35,15 +35,11 @@
     
     
     
-    <body id="page-top">
+    <body>
 
     <!-- Navigation -->
 
         <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-        
-    </head>
-    
-    <body>
         @include('commons.navbar')
         
             @include('commons.error_messages')
