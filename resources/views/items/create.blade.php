@@ -6,10 +6,10 @@
 <div style="background-color:#EDFEFF;" >
         
         <div style="padding-top:5%;">
-        <center><h2>新規出費を入力</h2></center>
+        <center><h2>👑🌷新規出費を入力🌷👑</h2></center>
         </div>
         
-        <div class="form" style="background-color:pink; margin:5% 30% 10% 30%">
+        <div class="form" style="background-color:#FFFCEA; margin:5% 30% 10% 30%">
         
         {!! Form::open(['route' => 'items.store']) !!}
         
