@@ -27,3 +27,4 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::get('show','ItemsController@show')->name('items.show');
 
+Route::get('item/chart','ItemsController@chart');

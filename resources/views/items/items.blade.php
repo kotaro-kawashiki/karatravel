@@ -20,30 +20,52 @@
     </div>
     
 </div>
-<script type="text/javascript">
-       　
-        google.load("visualization", "1", {packages:["corechart"]});
-        google.setOnLoadCallback(drawChart);
-        function drawChart() {
-        var data = google.visualization.arrayToDataTable([ //グラフデータの指定
-        ['Task', 'Hours per Day'],
-        ['Work',     11],
-        ['Eat',      2],
-        ['Commute',  2],
-        ['Watch TV', 2],
-        ['Sleep',    7]
-        ]);
-        var options = { //オプションの指定
-            pieSliceText: 'label',
-            title: 'Test Chart'
-        };
-        var chart = new google.visualization.PieChart(document.getElementById('piechart')); 
-        //グラフを表示させる要素の指定
-        chart.draw(data, options);
-        }
+
+    
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.js" charset="utf-8"></script>
+
+<script>
+        var url = "{{url('item/chart')}}";
+        var genre = new Array();
+        var namae = new Array();
+        var kinngaku = new Array();
+        $(document).ready(function(){
+          $.get(url, function(response){
+            response.forEach(function(data){
+                genre.push(data.genre);
+                namae.push(data.namae);
+                kinngaku.push(data.kinngaku);
+            });
+            var ctx = document.getElementById("canvas").getContext('2d');
+                var myChart = new Chart(ctx, {
+                  type: 'bar',
+                  data: {
+                      labels:Genres,
+                      datasets: [{
+                          label: 'Infosys Price',
+                          data: kinngakus, 
+                          borderWidth: 1
+                      }]
+                  },
+                  options: {
+                      scales: {
+                          yAxes: [{
+                              ticks: {
+                                  beginAtZero:true
+                              }
+                          }]
+                      }
+                  }
+              });
+          });
+        });
         </script>
-        
-        
+
+<canvas id="canvas" height="280" width="600"></canvas>
+
 
 {!! link_to_route('items.create', 'create') !!}
 <br>
