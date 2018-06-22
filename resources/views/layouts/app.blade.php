@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
         
-        <title>karavel</title>
+        <title>karatravel</title>
         
         
         
