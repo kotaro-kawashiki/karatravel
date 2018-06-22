@@ -1,3 +1,87 @@
+<?php
+$mysqli = new mysqli("localhost", "root", "", "karatravel");
+$result = $mysqli->query('SELECT * FROM items');
+
+/*
+---------------------------
+example data: Table (Chart)
+--------------------------
+weekly_task     percentage
+Sleep           30
+Watching Movie  40
+work            44
+*/
+
+//flag is not needed
+$flag = true;
+$table = [];
+$table['cols'] = [
+
+    // Labels for your chart, these represent the column titles
+    // Note that one column is in "string" format and another one is in "number" format as pie chart only required "numbers" for calculating percentage and string will be used for column title
+    ['label' => 'Kinngaku', 'type' => 'number'],
+    ['label' => 'Genre', 'type' => 'number']
+
+];
+
+$rows = [];
+ foreach($result as $r) {
+    $temp = [];
+    // the following line will be used to slice the Pie chart
+    $temp[] = ['v' => (int) $r['genre']]; 
+
+    // Values of each slice
+    $temp[] = ['v' => (int) $r['kinngaku']]; 
+    $rows[] = ['c' => $temp];
+}
+
+$table['rows'] = $rows;
+$jsonTable = json_encode($table);
+//echo $jsonTable;
+?>
+<!--Load the Ajax API-->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script type="text/javascript">
+
+    // Load the Visualization API and the piechart package.
+    google.load('visualization', '1', {'packages':['corechart']});
+
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      // Create our data table out of JSON data loaded from server.
+      var data = new google.visualization.DataTable(<?php $jsonTable?>);
+      var options = {
+           title: 'My Weekly Plan',
+          is3D: 'true',
+          width: 800,
+          height: 600
+        };
+      // Instantiate and draw our chart, passing in some options.
+      // Do not forget to check your div ID
+      var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="container">
     
     <div class="col-xl-12"style="margin-bottom:50px;"></div>
@@ -20,30 +104,7 @@
     </div>
     
 </div>
-<script type="text/javascript">
-       　
-        google.load("visualization", "1", {packages:["corechart"]});
-        google.setOnLoadCallback(drawChart);
-        function drawChart() {
-        var data = google.visualization.arrayToDataTable([ //グラフデータの指定
-        ['Task', 'Hours per Day'],
-        ['Work',     11],
-        ['Eat',      2],
-        ['Commute',  2],
-        ['Watch TV', 2],
-        ['Sleep',    7]
-        ]);
-        var options = { //オプションの指定
-            pieSliceText: 'label',
-            title: 'お札は頭を下にしていれる派です。',
-            'width': 800,
-			'height': 600
-        };
-        var chart = new google.visualization.PieChart(document.getElementById('piechart')); 
-        //グラフを表示させる要素の指定
-        chart.draw(data, options);
-        }
-        </script>
+ 
         
         
 
