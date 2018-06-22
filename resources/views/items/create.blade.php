@@ -1,17 +1,9 @@
-<head>
-        <style>
-                .navbar
-                {
-                        background-color: #B2F3FF;
-                }
-        </style>
-</head>
-<body>
+
 @extends('layouts.app')
 
 
 @section('content')
-
+<div style="background-color:red;">
         
         {!! Form::open(['route' => 'items.store']) !!}
         
@@ -30,6 +22,5 @@
 <a href="/" >戻る</a>
 
 
-
+</div>
 @endsection
-</body>
