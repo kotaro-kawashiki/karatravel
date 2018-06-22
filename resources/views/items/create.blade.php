@@ -9,8 +9,7 @@
         <center><h1>Input New Spending</h1></center>
         </div>
         
-        <div class="form" style="background-color:C4E7FF; margin:5% 30% 10% 30%; ">
-        
+        <div class="form" style="background-color:#C4E7FF; margin:5% 30% 10% 30%;">
         {!! Form::open(['route' => 'items.store']) !!}
         <br>
         <br>
@@ -55,5 +54,6 @@
 
 
 
-@endsection
 </div>
+@endsection
+
