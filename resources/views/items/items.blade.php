@@ -14,11 +14,16 @@
         <div class="col-xl-9" style="background-color:purple; height:100px;">
             total amount of this month
         </div>
-        <div class="col-xl-3" style="background-color:red; height:100px;">
-            shinnki-nyuuryoku
+        <div class="col-xl-3" style="height:100px;">
+　　　　
+            </div>
+            </div>
+            </div>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        </body>
         </div>
     </div>
-    
 </div>
 <script type="text/javascript">
        　
@@ -47,7 +52,7 @@
         
         
 
-{!! link_to_route('items.create', 'create') !!}
+
 <br>
 {!! link_to_route('items.show', 'show') !!}
 
