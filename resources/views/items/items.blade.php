@@ -16,6 +16,36 @@
         </div>
         <div class="col-lg-3" style="background-color:red; height:100px;">
             shinnki-nyuuryoku
+            <body>
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+        新規出費の入力!
+        </button>
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                
+            </div>
+            <div class="modal-body">
+                <h4>👑新規出費の入力👑</h4>
+                {!! Form::open(['route' => 'items.store']) !!}
+        
+        ジャンル{!! Form::select('genre',['あ','い','う']) !!}<br>
+        
+        詳細{!! Form::text('namae') !!}<br>
+        
+        金額{!! Form::text('kinngaku') !!}円<br>
+        
+        {!! Form::submit('Post') !!}
+
+        {!! Form::close() !!}
+            </div>
+            </div>
+            </div>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        </body> 
         </div>
     </div>
     
@@ -71,3 +101,9 @@
 <br>
 {!! link_to_route('items.show', 'show') !!}
 
+
+
+
+
+
+        

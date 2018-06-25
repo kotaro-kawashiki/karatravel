@@ -17,6 +17,9 @@
             @endforeach
             </tbody>
         </table>
+       
+        
+        
 
 <a href="/" >戻る</a>
 
