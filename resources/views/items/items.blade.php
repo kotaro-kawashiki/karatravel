@@ -14,8 +14,32 @@
         <div class="col-xl-9" style="background-color:purple; height:100px;">
             total amount of this month
         </div>
-        <div class="col-xl-3" style="height:100px;">
-　　　　
+        <div class="col-lg-3" style="height:100px;">
+        
+            <body>
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+        新規出費の入力!
+        </button>
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                
+            </div>
+            <div class="modal-body">
+                <h4>👑新規出費の入力👑</h4>
+                {!! Form::open(['route' => 'items.store']) !!}
+        
+        ジャンル{!! Form::select('genre',['あ','い','う']) !!}<br>
+        
+        詳細{!! Form::text('namae',null, ['class' => 'form-control form-control-lg mb-3']) !!}<br>
+        
+        金額{!! Form::text('kinngaku',null, ['class' => 'form-control form-control-lg mb-3']) !!}<br>
+        
+        {!! Form::submit('Post',['class' => "btn btn-info"]) !!}
+
+        {!! Form::close() !!}
             </div>
             </div>
             </div>
@@ -49,10 +73,17 @@
         chart.draw(data, options);
         }
         </script>
-        
-        
+
+<canvas id="canvas" height="280" width="600"></canvas>
+
 
 
 <br>
 {!! link_to_route('items.show', 'show') !!}
 
+
+
+
+
+
+        
