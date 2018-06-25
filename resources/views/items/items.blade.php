@@ -15,17 +15,57 @@
         <div class="col-xl-9" style="background-color:purple; height:100px;">
             total amount of this month
         </div>
-        <div class="col-xl-3" style="background-color:red; height:100px;">
-            shinnki-nyuuryoku
+        <div class="col-lg-3" style="height:100px;">
+        
+            <body>
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+        新規出費の入力!
+        </button>
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header" style="background-color:#FAD4DE;">
+                <h4>👑新規出費の入力👑</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                
+            </div>
+            <div class="modal-body" style="background-color:#FEF6F8;">
+                
+                {!! Form::open(['route' => 'items.store']) !!}
+        
+        ジャンル{!! Form::select('genre',['食費','交際費','生活費']) !!}<br>
+        
+        詳細{!! Form::text('namae',null, ['class' => 'form-control form-control-lg mb-3']) !!}<br>
+        
+        金額{!! Form::text('kinngaku',null, ['class' => 'form-control form-control-lg mb-3']) !!}<br>
+        
+        {!! Form::submit('Post',['class' => "btn btn-info"]) !!}
+
+        {!! Form::close() !!}
+            </div>
+            </div>
+            </div>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        </body>
         </div>
     </div>
-    
 </div>
  
         
         
 
-{!! link_to_route('items.create', 'create') !!}
-<br>
+<canvas id="canvas" height="280" width="600"></canvas>
+
+
+
+
 {!! link_to_route('items.show', 'show') !!}
 
+
+
+
+
+
+        

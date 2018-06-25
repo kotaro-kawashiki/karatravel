@@ -4,7 +4,7 @@
           die('Could not connect: ' . mysqli_error($con));
         }
         
-        $qry = "SELECT topping, slices FROM `pizza`";
+        $qry = "SELECT genre, kinngaku FROM `items`";
         
         $result = mysqli_query($con,$qry);
         mysqli_close($con);
@@ -12,9 +12,9 @@
         $table = [];
         $table['cols'] = [
         //Labels for the chart, these represent the column titles
-        ['id' => '', 'label' => 'Topping', 'type' => 'string'],
+        ['id' => '', 'label' => 'genre', 'type' => 'number'],
         
-        ['id' => '', 'label' => 'Slices', 'type' => 'number']
+        ['id' => '', 'label' => 'kinngaku', 'type' => 'number']
         ];
         
         $rows = [];
@@ -22,8 +22,8 @@
         $temp = [];
         
         //Values
-        $temp[] = ['v' => (string) $row['topping']];
-        $temp[] = ['v' => (float) $row['slices']];
+        $temp[] = ['v' => (string) $row['genre']];
+        $temp[] = ['v' => (float) $row['kinngaku']];
         $rows[] = ['c' => $temp];
         }
         

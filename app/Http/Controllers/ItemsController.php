@@ -66,9 +66,9 @@ class ItemsController extends Controller
         ]);
         
         $request->user()->items()->create([
-            'kinngaku' => $request->kinngaku,
-            'namae' => $request->namae,
-            'genre' => $request->genre,
+            'kinngaku' => $request->get('kinngaku'),
+            'namae' => $request->get('namae'),
+            'genre' => $request->get('genre'),
             ]);
             
         return redirect('/');
@@ -82,7 +82,15 @@ class ItemsController extends Controller
      */
     public function show()
     {
-        return view('items.show'
+        $data = [];
+            $user = \Auth::user();
+            $items = $user->items()->orderBy('created_at', 'desc')->paginate(10);
+
+            $data = [
+                'user' => $user,
+                'items' => $items,
+            ];
+        return view('items.show',$data
         );
     }
 
@@ -125,4 +133,13 @@ class ItemsController extends Controller
 
         return redirect()->back();
     }
+    
+    public function chart()
+      {
+        $result = \DB::table('items')
+                    ->where('namae','=','Infosys')
+                    ->orderBy('genre', 'ASC')
+                    ->get();
+        return response()->json($result);
+      }
 }

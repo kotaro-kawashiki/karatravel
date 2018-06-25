@@ -1,4 +1,3 @@
-
 @extends('layouts.app')
 
 
@@ -33,12 +32,8 @@
 
 
 
-<div>
-<center><a href="/" >戻る</a></center>        
-</div>
+<a href="/" >戻る</a>
 
 
 
-</div>
 @endsection
-
