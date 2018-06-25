@@ -24,14 +24,16 @@
               
             <div class="modal-dialog" role="document">
             <div class="modal-content">
-            <div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <div class="modal-header" style="background-color:#FAD4DE;">
+                <h4>👑新規出費の入力👑</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 
             </div>
-            <div class="modal-body">
-                <h4>👑新規出費の入力👑</h4>
+            <div class="modal-body" style="background-color:#FEF6F8;">
+                
                 {!! Form::open(['route' => 'items.store']) !!}
         
-        ジャンル{!! Form::select('genre',['あ','い','う']) !!}<br>
+        ジャンル{!! Form::select('genre',['食費','交際費','生活費']) !!}<br>
         
         詳細{!! Form::text('namae',null, ['class' => 'form-control form-control-lg mb-3']) !!}<br>
         
@@ -78,7 +80,7 @@
 
 
 
-<br>
+
 {!! link_to_route('items.show', 'show') !!}
 
 
