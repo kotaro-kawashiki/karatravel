@@ -12,9 +12,9 @@
 */
 
 Route::get('/', function () {
+    
     return view('welcome');
 });
-
 
 Auth::routes();
 
@@ -26,4 +26,5 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 Route::get('show','ItemsController@show')->name('items.show');
+
 
