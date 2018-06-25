@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
+　　<h3>　　支出一覧表</h3>
         <table  class="table table-striped">
             <tbody>
             @foreach ($items as $item)

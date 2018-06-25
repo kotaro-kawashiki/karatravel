@@ -66,7 +66,7 @@
         ]);
         var options = { //オプションの指定
             pieSliceText: 'label',
-            title: 'お札は頭を下にしていれる派です。',
+            title: '今月の支出。',
             'width': 800,
 			'height': 600
         };
