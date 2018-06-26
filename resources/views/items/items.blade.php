@@ -17,7 +17,6 @@
         </div>
         <div class="col-lg-3" style="height:100px;">
         
-            <body>
         <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
         新規出費の入力!
         </button>
@@ -34,15 +33,15 @@
                 
                 {!! Form::open(['route' => 'items.store']) !!}
         
-        ジャンル{!! Form::select('genre',['食費','交際費','生活費']) !!}<br>
+                ジャンル{!! Form::select('genre',['食費','交際費','生活費']) !!}<br>
+                
+                詳細{!! Form::text('namae',null, ['class' => 'form-control form-control-lg mb-3']) !!}<br>
+                
+                金額{!! Form::text('kinngaku',null, ['class' => 'form-control form-control-lg mb-3']) !!}<br>
+                
+                {!! Form::submit('Post',['class' => "btn btn-info"]) !!}
         
-        詳細{!! Form::text('namae',null, ['class' => 'form-control form-control-lg mb-3']) !!}<br>
-        
-        金額{!! Form::text('kinngaku',null, ['class' => 'form-control form-control-lg mb-3']) !!}<br>
-        
-        {!! Form::submit('Post',['class' => "btn btn-info"]) !!}
-
-        {!! Form::close() !!}
+                {!! Form::close() !!}
             </div>
             </div>
             </div>

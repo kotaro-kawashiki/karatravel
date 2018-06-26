@@ -4,7 +4,7 @@
           die('Could not connect: ' . mysqli_error($con));
         }
         
-        $qry = "SELECT genre, kinngaku FROM `items`";
+        $qry = "SELECT genre, kinngaku FROM `items` WHERE DATE_FORMAT(created_at, '%Y%m') = DATE_FORMAT(NOW(), '%Y%m')";
         
         $result = mysqli_query($con,$qry);
         mysqli_close($con);
@@ -12,7 +12,7 @@
         $table = [];
         $table['cols'] = [
         //Labels for the chart, these represent the column titles
-        ['id' => '', 'label' => 'genre', 'type' => 'number'],
+        ['id' => '', 'label' => 'genre', 'type' => 'string'],
         
         ['id' => '', 'label' => 'kinngaku', 'type' => 'number']
         ];
@@ -57,7 +57,7 @@
 
         // Set chart options
         google.charts.load('current', {'packages':['corechart'], 'language': 'ja'});
-        var options = {'title':'How Much Pizza I Ate Last Night',
+        var options = {'title':'How much i spent this month',
                        'width':800,
                        'height':600};
 

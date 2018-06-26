@@ -37,10 +37,10 @@
     <!-- Navigation -->
         <script type="text/javascript" src="https://www.google.com/jsapi"></script>
         @include('commons.navbar')
-        
-            @include('commons.error_messages')
+    
+        @include('commons.error_messages')
 
-            @yield('content')
+        @yield('content')
     </body>
     <footer class="blockquote-footer" style="text-align:senter;">©kara-age</footer>
 </html>
