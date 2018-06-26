@@ -9,7 +9,8 @@ class WelcomeController extends Controller
     public function index()
     {
         $user = \Auth::user();
-        $items = $user->items()->orderBy('created_at', 'desc')->paginate(10);
+        $month = date("m");
+        $items = $user->items()->whereMonth('created_at','=',$month)->paginate(10000);
         
         $data = [
             'user'=> $user,
