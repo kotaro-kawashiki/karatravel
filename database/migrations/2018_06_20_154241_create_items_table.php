@@ -18,7 +18,7 @@ class CreateItemsTable extends Migration
             $table->integer('user_id')->unsigned()->index();
             $table->integer('kinngaku');
             $table->string('namae');
-            $table->integer('genre');
+            $table->string('genre');
             $table->timestamps();
             
             $table->foreign('user_id')->references('id')->on('users');

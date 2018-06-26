@@ -12,7 +12,10 @@ class ItemsController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     * 
      */
+     
+     
     public function index()
     {
         $data = [];
@@ -25,6 +28,7 @@ class ItemsController extends Controller
                 'items' => $items,
             ];
             $data += $this->counts($user);
+            
             return view('users.show', $data);
         }else {
             return view('welcome');
