@@ -1,14 +1,4 @@
 <?php
-        $con = mysqli_connect('localhost','root','','karatravel');
-        if (!$con) {
-          die('Could not connect: ' . mysqli_error($con));
-        }
-        
-        $qry = "SELECT genre, kinngaku FROM `items` WHERE DATE_FORMAT(created_at, '%Y%m') = DATE_FORMAT(NOW(), '%Y%m')";
-        
-        $result = mysqli_query($con,$qry);
-        mysqli_close($con);
-        
         $table = [];
         $table['cols'] = [
         //Labels for the chart, these represent the column titles
@@ -18,7 +8,7 @@
         ];
         
         $rows = [];
-        foreach($result as $row){
+        foreach($items as $row){
         $temp = [];
         
         //Values
@@ -27,7 +17,7 @@
         $rows[] = ['c' => $temp];
         }
         
-        $result->free();
+        //$result->free();
 
         $table['rows'] = $rows;
         
@@ -69,3 +59,4 @@
     
     
     <div id="chart_div"></div>
+    

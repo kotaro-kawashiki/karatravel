@@ -5,7 +5,10 @@
     
     <div class="row" style="width:1300px; padding-left:10px;">
         <div class="col-xl-7">
+            {{$user->name}}
+            
             @include('items.piechart')
+            
         </div>
         <div class="col-xl-5" style="background-color:pink; height:550px;">
         lists

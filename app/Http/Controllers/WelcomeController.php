@@ -8,9 +8,13 @@ class WelcomeController extends Controller
 {
     public function index()
     {
-        $spendings = Item::orderBy('updated_at', 'desc')->paginate(20);
-        return view('welcome', [
-            'spendings' => $spendings,
-        ]);
+        $user = \Auth::user();
+        $items = $user->items()->orderBy('created_at', 'desc')->paginate(10);
+        
+        $data = [
+            'user'=> $user,
+            'items' => $items];
+        
+        return view('welcome',$data);
     }
 }

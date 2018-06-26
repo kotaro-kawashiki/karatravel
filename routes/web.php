@@ -11,10 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    
-    return view('welcome');
-});
+Route::get('/', 'WelcomeController@index');
 
 Auth::routes();
 
@@ -27,4 +24,4 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::get('show','ItemsController@show')->name('items.show');
 
-
+Route::get('piechart','Itemscontroller@piechart')->name('items.piechart');
