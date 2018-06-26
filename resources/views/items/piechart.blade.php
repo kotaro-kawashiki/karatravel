@@ -1,5 +1,8 @@
 <?php
-        $con = mysqli_connect('localhost','root','','karatravel');
+        $con = mysqli_connect('postgres://hrxpycspeffdoc:1b7e460a790d0bb8cc8595fd1fc6fc8440011518dbe1cb4b0447a7b9d0bd4d19@ec2-54-204-2-26.compute-1.amazonaws.com:5432/da868mtamo9qol',
+                              'hrxpycspeffdoc',
+                              '1b7e460a790d0bb8cc8595fd1fc6fc8440011518dbe1cb4b0447a7b9d0bd4d19',
+                              'da868mtamo9qol');
         if (!$con) {
           die('Could not connect: ' . mysqli_error($con));
         }
