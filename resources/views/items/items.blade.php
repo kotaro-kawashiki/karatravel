@@ -16,7 +16,13 @@
     </div>
     <div class="row" style="width:1300px;">
         <div class="col-xl-9" style="background-color:purple; height:100px;">
-            total amount of this month
+            <?php
+            $total = 0;
+            foreach($items as $item){
+                $total += $item->kinngaku;
+            }
+            echo $total
+            ?>
         </div>
         <div class="col-lg-3" style="height:100px;">
         

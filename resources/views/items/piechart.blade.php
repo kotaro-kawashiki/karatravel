@@ -8,21 +8,20 @@
         ];
         
         $rows = [];
-        foreach($items as $row){
-        $temp = [];
+         foreach($items as $row){
+         $temp = [];
         
-        //Values
-        $temp[] = ['v' => (string) $row['genre']];
-        $temp[] = ['v' => (float) $row['kinngaku']];
-        $rows[] = ['c' => $temp];
-        }
+         // the following line will be used to slice the Pie chart
+         $temp[] = ['v' => (string) $row['genre']];
+        // Values of each slice
+         $temp[] = ['v' => (int) $row['kinngaku']];
+         $rows[] = ['c' => $temp];
+         }
         
-        //$result->free();
 
-        $table['rows'] = $rows;
+         $table['rows'] = $rows;
         
-        $jsonTable = json_encode($table, true);
-       // echo $jsonTable;
+         $jsonTable = json_encode($table, true);
         ?>
 
 
@@ -43,7 +42,7 @@
           
           
         // Create the data table.
-        var data = new google.visualization.DataTable(<?=$jsonTable ?>)
+         var data = new google.visualization.DataTable(<?= $jsonTable?>)
 
         // Set chart options
         google.charts.load('current', {'packages':['corechart'], 'language': 'ja'});

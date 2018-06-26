@@ -13,7 +13,8 @@ class WelcomeController extends Controller
         
         $data = [
             'user'=> $user,
-            'items' => $items];
+             'items' => $items,
+            ];
         
         return view('welcome',$data);
     }
