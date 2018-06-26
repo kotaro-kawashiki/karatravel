@@ -32,14 +32,16 @@ if (!$closed_flag){
 <table  class="table table-striped">
         <tbody>
         @foreach($result as $row)
-            <tr>
+                 <tr>
                  <td>{{ $row['genre'] }}</td>
                  <td>{{ $row['namae'] }}</td>
                  <td>{{ $row['kinngaku'] }}円</td>
                  {!! Form::close() !!}</td>
                  </tr>
-    
+                 
         @endforeach
         </tbody>
 </table>
+
+
 </div>
