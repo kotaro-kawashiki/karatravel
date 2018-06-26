@@ -10,7 +10,7 @@
             @include('items.piechart')
             
         </div>
-        <div class="col-xl-5" style="background-color:pink; height:550px; overflow:auto;">
+        <div class="col-xl-5" style=" height:550px; overflow:auto;">
         @include('items.monthlylist')
         </div>
     </div>
