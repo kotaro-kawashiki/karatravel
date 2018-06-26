@@ -42,5 +42,5 @@
 
         @yield('content')
     </body>
-    <footer class="blockquote-footer" style="text-align:senter;">©kara-age</footer>
+    <footer class="blockquote-footer" style="text-align:center;">©kara-age</footer>
 </html>

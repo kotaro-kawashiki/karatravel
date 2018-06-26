@@ -12,8 +12,8 @@
         </div>
     </div>
     <div class="row" style="width:1300px;">
-        <div class="col-xl-9" style="background-color:purple; height:100px;">
-            total amount of this month
+        <div class="col-xl-9" style="height:100px;">
+    
         </div>
         <div class="col-lg-3" style="height:100px;">
         
