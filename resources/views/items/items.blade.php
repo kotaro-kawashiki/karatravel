@@ -33,7 +33,12 @@
                 
                 {!! Form::open(['route' => 'items.store']) !!}
         
-                ジャンル{!! Form::select('genre',['食費','交際費','生活費']) !!}<br>
+                <!--ジャンル{!! Form::select('genre',['食費','交際費','生活費']) !!}<br>-->
+                <select name="genre" size="string">
+                        <option value="食費"　selected>食費</option>
+                        <option value="生活費">生活費</option>
+                        <option value="交際費">交際費</option>
+                </select>
                 
                 詳細{!! Form::text('namae',null, ['class' => 'form-control form-control-lg mb-3']) !!}<br>
                 
