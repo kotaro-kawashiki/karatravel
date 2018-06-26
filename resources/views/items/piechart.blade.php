@@ -47,7 +47,7 @@
 
         // Set chart options
         google.charts.load('current', {'packages':['corechart'], 'language': 'ja'});
-        var options = {'title':'How much i spent this month',
+        var options = {
                        'width':800,
                        'height':600,
                        pieHole: 0.4
