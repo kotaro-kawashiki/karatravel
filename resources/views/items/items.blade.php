@@ -5,15 +5,26 @@
     
     <div class="row" style="width:1300px; padding-left:10px;">
         <div class="col-xl-7">
+            {{$user->name}}
+            
             @include('items.piechart')
+            
         </div>
-        <div class="col-xl-5" style="background-color:pink; height:550px;">
-        lists
+        <div class="col-xl-5" style="background-color:pink; height:550px; overflow:auto;">
+        @include('items.monthlylist')
         </div>
     </div>
     <div class="row" style="width:1300px;">
-        <div class="col-xl-9" style="height:100px;">
-    
+
+        <div class="col-xl-9" style="background-color:purple; height:100px;">
+            <?php
+            $total = 0;
+            foreach($items as $item){
+                $total += $item->kinngaku;
+            }
+            echo $total
+            ?>
+
         </div>
         <div class="col-lg-3" style="height:100px;">
         
@@ -33,7 +44,12 @@
                 
                 {!! Form::open(['route' => 'items.store']) !!}
         
-                ジャンル{!! Form::select('genre',['食費','交際費','生活費']) !!}<br>
+                <!--ジャンル{!! Form::select('genre',['食費','交際費','生活費']) !!}<br>-->
+                <select name="genre" size="string">
+                        <option value="食費"　selected>食費</option>
+                        <option value="生活費">生活費</option>
+                        <option value="交際費">交際費</option>
+                </select>
                 
                 詳細{!! Form::text('namae',null, ['class' => 'form-control form-control-lg mb-3']) !!}<br>
                 

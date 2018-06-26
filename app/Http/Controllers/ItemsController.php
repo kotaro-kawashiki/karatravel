@@ -81,6 +81,7 @@ class ItemsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+     
     public function show()
     {
         $data = [];
@@ -93,6 +94,18 @@ class ItemsController extends Controller
             ];
         return view('items.show',$data
         );
+    }
+    
+    public function piechart(){
+        $data = [];
+         $user = \Auth::user();
+         $items = $user->items();
+         
+         $data = [
+             'user' => $user,
+             'items' => $items,];
+             return view('items.piechart',$data);
+        
     }
 
     /**
@@ -135,12 +148,4 @@ class ItemsController extends Controller
         return redirect()->back();
     }
     
-    public function chart()
-      {
-        $result = \DB::table('items')
-                    ->where('namae','=','Infosys')
-                    ->orderBy('genre', 'ASC')
-                    ->get();
-        return response()->json($result);
-      }
 }

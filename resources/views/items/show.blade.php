@@ -10,8 +10,8 @@
                          <td>{{ $item->namae }}</td>
                          <td>{{ $item->kinngaku }}</td>
                          <td>{!! Form::open(['route' => ['items.destroy', $item->id], 'method' => 'delete']) !!}
-                         {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
-                         {!! Form::close() !!}</td>
+                             {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
+                             {!! Form::close() !!}</td>
                          </tr>
         
             @endforeach

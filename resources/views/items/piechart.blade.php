@@ -1,14 +1,4 @@
 <?php
-        $con = mysqli_connect('localhost','root','','karatravel');
-        if (!$con) {
-          die('Could not connect: ' . mysqli_error($con));
-        }
-        
-        $qry = "SELECT genre, kinngaku FROM `items` WHERE DATE_FORMAT(created_at, '%Y%m') = DATE_FORMAT(NOW(), '%Y%m')";
-        
-        $result = mysqli_query($con,$qry);
-        mysqli_close($con);
-        
         $table = [];
         $table['cols'] = [
         //Labels for the chart, these represent the column titles
@@ -18,21 +8,20 @@
         ];
         
         $rows = [];
-        foreach($result as $row){
-        $temp = [];
+         foreach($items as $row){
+         $temp = [];
         
-        //Values
-        $temp[] = ['v' => (string) $row['genre']];
-        $temp[] = ['v' => (float) $row['kinngaku']];
-        $rows[] = ['c' => $temp];
-        }
+         // the following line will be used to slice the Pie chart
+         $temp[] = ['v' => (string) $row['genre']];
+        // Values of each slice
+         $temp[] = ['v' => (int) $row['kinngaku']];
+         $rows[] = ['c' => $temp];
+         }
         
-        $result->free();
 
-        $table['rows'] = $rows;
+         $table['rows'] = $rows;
         
-        $jsonTable = json_encode($table, true);
-       // echo $jsonTable;
+         $jsonTable = json_encode($table, true);
         ?>
 
 
@@ -53,7 +42,7 @@
           
           
         // Create the data table.
-        var data = new google.visualization.DataTable(<?=$jsonTable ?>)
+         var data = new google.visualization.DataTable(<?= $jsonTable?>)
 
         // Set chart options
         google.charts.load('current', {'packages':['corechart'], 'language': 'ja'});
@@ -69,3 +58,4 @@
     
     
     <div id="chart_div"></div>
+    
