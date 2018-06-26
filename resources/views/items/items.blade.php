@@ -5,7 +5,9 @@
     
     <div class="row" style="width:1300px; padding-left:10px;">
         <div class="col-xl-7">
-            {{$user->name}}
+            @foreach($items as $item)
+            {{$item}}
+            @endforeach
             
             @include('items.piechart')
             
