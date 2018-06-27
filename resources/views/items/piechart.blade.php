@@ -9,7 +9,7 @@
         
         
         $rows = [];
-         foreach($items as $row){
+         foreach($total as $row){
          $temp = [];
         
          // the following line will be used to slice the Pie chart
@@ -23,7 +23,7 @@
          $table['rows'] = $rows;
         
          $jsonTable = json_encode($table, true);
-        ?>
+?>
 
 
 <!--Load the AJAX API-->
@@ -59,6 +59,7 @@
         chart.draw(data, options);
       }
     </script>
- 
+
+        
     <div id="chart_div"></div>
     

@@ -16,7 +16,7 @@
                          <td>{{ $item->genre }}</td>
                          <td>{{ $item->namae }}</td>
                          <td>￥{{ $item->kinngaku }}</td>
-                         <td>{{$item->created_at}}</td>
+                         <td>{{ $item->created_at }}</td>
                          <td></td>
                          <td>{!! Form::open(['route' => ['items.destroy', $item->id], 'method' => 'delete']) !!}
                              {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
