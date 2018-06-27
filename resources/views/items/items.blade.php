@@ -81,7 +81,6 @@
         
         
 
-<canvas id="canvas" height="280" width="600"></canvas>
 
 
 
