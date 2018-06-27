@@ -46,8 +46,10 @@
                 <!--ジャンル{!! Form::select('genre',['食費','交際費','生活費']) !!}<br>-->
                 <select name="genre" size="string">
                         <option value="食費"　selected>食費</option>
-                        <option value="生活費">生活費</option>
+                        <option value="美容費">美容費</option>
                         <option value="交際費">交際費</option>
+                        <option value="固定費">固定費</option>
+                        <option value="その他">その他</option>
                 </select>
                 <br>
                 詳細{!! Form::text('namae',null, ['class' => 'form-control form-control-lg mb-3']) !!}<br>

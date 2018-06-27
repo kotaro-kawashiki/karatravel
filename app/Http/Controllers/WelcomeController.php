@@ -20,19 +20,27 @@ class WelcomeController extends Controller
         
         
         //////////////////////////////////////////////
-        $a = ['genre'=>'生活費','kinngaku'=>0];
+        $a = ['genre'=>'美容費','kinngaku'=>0];
         $b = ['genre'=>'交際費','kinngaku'=>0];
         $c = ['genre'=>'食費','kinngaku'=>0];
+        $d = ['genre'=>'固定費','kinngaku'=>0];
+        $e = ['genre'=>'その他','kinngaku'=>0];
         
         foreach($items as $item){
-            if($item->genre == '生活費'){
+            if($item->genre == '美容費'){
                 $a['kinngaku'] +=$item->kinngaku;
             }
             elseif($item->genre == '交際費'){
                 $b['kinngaku'] += $item->kinngaku;
             }
-            else{
+            elseif($item->genre == '食費'){
                 $c['kinngaku'] += $item->kinngaku;
+            }
+            elseif($item->genre == '固定費'){
+                $d['kinngaku'] += $item->kinngaku;
+            }
+            else{
+                $e['kinngaku'] += $item->kinngaku;
             }
         }
         
