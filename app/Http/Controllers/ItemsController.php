@@ -87,11 +87,11 @@ class ItemsController extends Controller
         $data = [];
             $user = \Auth::user();
             $items = $user->items()->orderBy('created_at', 'desc')->paginate(10);
-
             $data = [
                 'user' => $user,
                 'items' => $items,
             ];
+            $month = date("m");
         return view('items.show',$data
         );
     }

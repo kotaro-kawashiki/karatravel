@@ -7,6 +7,7 @@
         ['id' => '', 'label' => 'kinngaku', 'type' => 'number']
         ];
         
+        
         $rows = [];
          foreach($items as $row){
          $temp = [];
@@ -48,14 +49,16 @@
         google.charts.load('current', {'packages':['corechart'], 'language': 'ja'});
         var options = {
                        'width':800,
-                       'height':600};
+                       'height':600,
+                       pieHole: 0.4
+                       
+        };
 
         // Instantiate and draw our chart, passing in some options.
         var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
         chart.draw(data, options);
       }
     </script>
-    
-    
+ 
     <div id="chart_div"></div>
     
