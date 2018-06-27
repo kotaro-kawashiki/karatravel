@@ -6,7 +6,7 @@
     <div class="row" style="width:1300px; padding-left:10px;">
         <div class="col-xl-7">
 
-            <h2>{{$user->name}}さんの家計簿</h2>
+            <h2>{{$user->name}}さんの家計簿🐣🐥🐤</h2>
             @include('items.piechart')
             
         </div>
