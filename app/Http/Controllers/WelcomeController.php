@@ -47,13 +47,17 @@ class WelcomeController extends Controller
         
         $total = [$a,$b,$c,$d,$e];
         /////////////////////////////////////////////////
-        
+        $month_total = 0;
+        foreach($items as $item){
+            $month_total += $item->kinngaku;
+        }
         
         
         $data = [
             'user'=> $user,
             'items' => $items,
             'total' => $total,
+            'month_total' => $month_total,
             ];
         
         return view('welcome',$data);
@@ -62,4 +66,4 @@ class WelcomeController extends Controller
             return view('welcome');
         }
     }
-}
+} 
