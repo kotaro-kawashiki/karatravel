@@ -79,7 +79,13 @@
         var options = {
                        'width':800,
                        'height':600,
-                       pieHole: 0.4
+                       pieHole: 0.4,
+                       colors:[
+                           '#247BA0',
+                           '#70C1B3',
+                           '#B2DBBF',
+                           '#F3FFBD',
+                           '#f4617f']
                        
         };
 

@@ -6,7 +6,7 @@
     <div class="row" style="width:1300px; padding-left:10px;">
         <div class="col-xl-7">
 
-            <h2>{{$user->name}}さんの家計簿🐣🐥🐤</h2>
+            <h2>{{$user->name}}さんの家計簿</h2>
             @include('items.piechart')
             
         </div>
@@ -16,13 +16,13 @@
             <h4>出費詳細状況</h4>
             {!! link_to_route('items.show', 'さらに詳しく確認') !!}
         　　@include('items.monthlylist')
-        　　<h3>今月の出費合計：<h1><?php
+        　　<h3>今月の出費合計：<h1 style="color:#cb0065;"><?php
             $total = 0;
             foreach($items as $item){
                 $total += $item->kinngaku;
             }
             echo $total
-            ?>円</h1>
+            ?></h1><h1>円</h1>
             </h3>
             <div class="kuuhaku" style="color:white;">
                 <h1>sukimasukimasukimasukimasukimasu</h1>
