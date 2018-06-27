@@ -45,7 +45,7 @@ class WelcomeController extends Controller
         }
         
         
-        $total = [$a,$b,$c];
+        $total = [$a,$b,$c,$d,$e];
         /////////////////////////////////////////////////
         
         
