@@ -1,13 +1,31 @@
 <?php
-        $con = mysqli_connect('localhost','root','','karatravel');
-        if (!$con) {
-          die('Could not connect: ' . mysqli_error($con));
+        $shokuhi=['genre'=>'食費','kinngaku'=>0];
+        $koteihi=['genre'=>"固定費",'kinngaku'=>0];
+        $kousaihi=['genre'=>"交際費",'kinngaku'=>0];
+        $biyouhi=['genre'=>"美容費",'kinngaku'=>0];
+        $sonota=['genre'=>"その他",'kinngaku'=>0];
+        
+        
+        
+        foreach($items as $item){
+            if($item->genre=="食費"){
+                $shokuhi["kinngaku"]+=$item->kinngaku;
+            }
+            elseif($item->genre=="固定費"){
+                $koteihi["kinngaku"]+=$item->kinngaku;
+            }
+            elseif($item->genre=="交際費"){
+                $kousaihi["kinngaku"] +=$item->kinngaku;
+            }
+            elseif($item->genre=="美容費"){
+                $biyouhi["kinngaku"] +=$item->kinngaku;
+            }
+            else{
+                $sonota["kinngaku"] +=$item->kinngaku;
+            }
         }
         
-        $qry = "SELECT genre, kinngaku FROM `items` WHERE DATE_FORMAT(created_at, '%Y%m') = DATE_FORMAT(NOW(), '%Y%m')";
-        
-        $result = mysqli_query($con,$qry);
-        mysqli_close($con);
+        $total=[$shokuhi,$koteihi,$kousaihi,$biyouhi,$sonota];
         
         $table = [];
         $table['cols'] = [
@@ -17,22 +35,23 @@
         ['id' => '', 'label' => 'kinngaku', 'type' => 'number']
         ];
         
+        
         $rows = [];
-        foreach($result as $row){
-        $temp = [];
+         foreach($total as $row){
+         $temp = [];
         
-        //Values
-        $temp[] = ['v' => (string) $row['genre']];
-        $temp[] = ['v' => (float) $row['kinngaku']];
-        $rows[] = ['c' => $temp];
-        }
+         // the following line will be used to slice the Pie chart
+         $temp[] = ['v' => (string) $row['genre']];
+        // Values of each slice
+         $temp[] = ['v' => (int) $row['kinngaku']];
+         $rows[] = ['c' => $temp];
+         }
         
-        $result->free();
 
-        $table['rows'] = $rows;
+         $table['rows'] = $rows;
         
-        $jsonTable = json_encode($table, true);
-       // echo $jsonTable;
+         $jsonTable = json_encode($table, true);
+         
         ?>
 
 
@@ -53,19 +72,22 @@
           
           
         // Create the data table.
-        var data = new google.visualization.DataTable(<?=$jsonTable ?>)
+         var data = new google.visualization.DataTable(<?= $jsonTable?>)
 
         // Set chart options
         google.charts.load('current', {'packages':['corechart'], 'language': 'ja'});
-        var options = {'title':'How much i spent this month',
+        var options = {
                        'width':800,
-                       'height':600};
+                       'height':600,
+                       pieHole: 0.4
+                       
+        };
 
         // Instantiate and draw our chart, passing in some options.
         var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
         chart.draw(data, options);
       }
     </script>
-    
-    
+ 
     <div id="chart_div"></div>
+    

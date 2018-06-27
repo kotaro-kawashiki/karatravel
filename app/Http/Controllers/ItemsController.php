@@ -22,6 +22,7 @@ class ItemsController extends Controller
         if (\Auth::check()) {
             $user = \Auth::user();
             $items = $user->items()->orderBy('created_at', 'desc')->paginate(10);
+            
 
             $data = [
                 'user' => $user,
@@ -80,18 +81,31 @@ class ItemsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+     
     public function show()
     {
         $data = [];
             $user = \Auth::user();
             $items = $user->items()->orderBy('created_at', 'desc')->paginate(10);
-
             $data = [
                 'user' => $user,
                 'items' => $items,
             ];
+            $month = date("m");
         return view('items.show',$data
         );
+    }
+    
+    public function piechart(){
+        $data = [];
+         $user = \Auth::user();
+         $items = $user->items();
+         
+         $data = [
+             'user' => $user,
+             'items' => $items,];
+             return view('items.piechart',$data);
+        
     }
 
     /**
@@ -134,12 +148,4 @@ class ItemsController extends Controller
         return redirect()->back();
     }
     
-    public function chart()
-      {
-        $result = \DB::table('items')
-                    ->where('namae','=','Infosys')
-                    ->orderBy('genre', 'ASC')
-                    ->get();
-        return response()->json($result);
-      }
 }
