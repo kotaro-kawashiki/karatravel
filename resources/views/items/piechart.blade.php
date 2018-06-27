@@ -1,4 +1,32 @@
 <?php
+        $shokuhi=['genre'=>'食費','kinngaku'=>0];
+        $koteihi=['genre'=>"固定費",'kinngaku'=>0];
+        $kousaihi=['genre'=>"交際費",'kinngaku'=>0];
+        $biyouhi=['genre'=>"美容費",'kinngaku'=>0];
+        $sonota=['genre'=>"その他",'kinngaku'=>0];
+        
+        
+        
+        foreach($items as $item){
+            if($item->genre=="食費"){
+                $shokuhi["kinngaku"]+=$item->kinngaku;
+            }
+            elseif($item->genre=="固定費"){
+                $koteihi["kinngaku"]+=$item->kinngaku;
+            }
+            elseif($item->genre=="交際費"){
+                $kousaihi["kinngaku"] +=$item->kinngaku;
+            }
+            elseif($item->genre=="美容費"){
+                $biyouhi["kinngaku"] +=$item->kinngaku;
+            }
+            else{
+                $sonota["kinngaku"] +=$item->kinngaku;
+            }
+        }
+        
+        $total=[$shokuhi,$koteihi,$kousaihi,$biyouhi,$sonota];
+        
         $table = [];
         $table['cols'] = [
         //Labels for the chart, these represent the column titles
@@ -9,7 +37,7 @@
         
         
         $rows = [];
-         foreach($items as $row){
+         foreach($total as $row){
          $temp = [];
         
          // the following line will be used to slice the Pie chart
@@ -23,6 +51,7 @@
          $table['rows'] = $rows;
         
          $jsonTable = json_encode($table, true);
+         
         ?>
 
 
